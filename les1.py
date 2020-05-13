@@ -1,10 +1,10 @@
-#1 вывод переменных числовых и текстовых на экран
+# #1 вывод переменных числовых и текстовых на экран
 name = input('введите пожалуйста имя\n')
 city = input('введите город проживания\n')
 weight = input('введите свой вес\n')
 age = input('введите возраст\n')
 print('Hello',name,'твой вес:', weight,'уезжай обратно в город:', city,'и неважно, что тебе всего',age)
-#2 перевод в часы мин и секунды
+# #2 перевод в часы мин и секунды
 while True:
     timesec = input('введите время в секундах\n')
     if timesec.isdigit():
@@ -16,7 +16,7 @@ hours = int(timesec/60)
 minutes = int((timesec-hours*60)/60)
 seconds = timesec-hours*60-minutes*60*60
 print(('Точное время: {} часов {} минут {} секунд').format(hours,minutes,seconds))
-#3 сумма чисел n, nn, nnn
+# #3 сумма чисел n, nn, nnn
 while True:
     digit = input('введите произвольное число\n')
     if digit.isdigit():
@@ -25,30 +25,22 @@ while True:
         print('введите число!')
 digit_sum = int(digit)+int(digit+digit)+int(digit+digit+digit)
 print(digit_sum)
-#4 самая большая цифра в числе
+#4 самая большая цифра в числе - второй вариант
 while True:
     positive_digit = input('введите целое положительное число\n')
     if positive_digit.isdigit() and int(positive_digit)>0:
+        positive_digit = int(positive_digit)
         break
     else:
         print('число должно быть целым и положительным!')
-i=len(positive_digit)-1
-list=[]
-while i>=0:
-    digit = positive_digit[i]
-    list.append(digit)
-    i-=1
-i=len(positive_digit)-1
-probably_max = list[i]
-while i>=0:
-    if list[i - 1]>probably_max:
-        probably_max = list[i - 1]
-        i -= 1
-    else:
-        i -= 1
-        continue
-print(probably_max)
-#5 рентабельность фирмы
+max = positive_digit % 10
+while positive_digit > 0:
+    digit = positive_digit % 10
+    positive_digit = positive_digit // 10
+    if digit > max:
+        max = digit
+print(max)
+# #5 рентабельность фирмы
 while True:
     revenue = input('введите доход фирмы\n')
     costs = input('введите издержки фирмы\n')
@@ -74,7 +66,7 @@ if revenue > costs:
 else:
         loss = costs - revenue
         print('Печаль...У фирмы убытки! Убыток составил {} руб.'.format(loss))
-#6 Задача про спортсмена
+# #6 Задача про спортсмена
 while True:
     distance = input('Сколько км Вы пробежали в 1-й день?\n')
     max_distance = input('Какого результата в км хотите достигнуть?\n')
