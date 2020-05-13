@@ -40,7 +40,7 @@ while positive_digit > 0:
     if digit > max:
         max = digit
 print(max)
-# #5 рентабельность фирмы
+#5 рентабельность фирмы
 while True:
     revenue = input('введите доход фирмы\n')
     costs = input('введите издержки фирмы\n')
