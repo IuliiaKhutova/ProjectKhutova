@@ -6,25 +6,32 @@
 # Первый — возведение в степень с помощью оператора **.
 # Второй — более сложная реализация без оператора **, предусматривающая использование цикла.
 
-i = 0
-while i < 1:
+while True:
     try:
         x = int(input("введите число x\n"))
         y = int(input("введите число y\n"))
-        i += 1
+        # i += 1
     except ValueError:
         print("ОШИБКА! В поле можно указать только число")
         continue
+    if x < 0 or y > 0:
+        print("ОШИБКА! x должен быть положительным, y - отрицательным")
+        continue
+    else: break
 
 def my_func(x,y):
     return x**y
 
 def my_func_complex(x,y):
-    i=y
+    i=abs(y)
     result=1
     while i:
-        result = result*x
-        i=i-1
+        try:
+            result = result*(1/x)
+            i=i-1
+        except ZeroDivisionError:
+            print("ОШИБКА! Делить на 0 нельзя")
+            break
     return result
 
 print(my_func(x,y),my_func_complex(x,y))
