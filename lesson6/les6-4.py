@@ -42,11 +42,11 @@ class WorkCar(Car):
         if self.speed > 40:
             print(f'скорость машины {self.name} превышена на {self.speed - 40} км')
 class PoliceCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
+    def __init__(self, speed, color, name):
+        super().__init__(speed, color, name, True)
     # print("Это полицейская машина {self.name}")
 
-police = PoliceCar(60, "черная", "Ауди", True)
+police = PoliceCar(60, "черная", "Ауди")
 police.go()
 work =WorkCar(90, "синяя", "BMW", False)
 work.stop()
